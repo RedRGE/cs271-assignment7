@@ -1,1 +1,3 @@
-{}
+"scripts": {
++ "test": "echo \"No tests configured, skipping...\" && exit 0"
+}
