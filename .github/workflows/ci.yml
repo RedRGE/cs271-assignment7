@@ -1,10 +1,14 @@
 name: CI
 
 on:
+<<<<<<< HEAD
   workflow_dispatch:
   push:
     branches: [develop, 'feature/**', 'release/**', 'hotfix/**']
   pull_request:
+=======
+  push:
+>>>>>>> bc049649fb6f351de156d37b9b9f3c408a8cd227
     branches:
       - develop
       - 'feature/**'
@@ -14,6 +18,7 @@ on:
 jobs:
   build-and-test:
     runs-on: ubuntu-latest
+<<<<<<< HEAD
     strategy:
       matrix:
         node-version: [16.x, 18.x]
@@ -24,6 +29,14 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: ${{ matrix.node-version }}
+=======
+    steps:
+      - uses: actions/checkout@v2
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '16'
+>>>>>>> bc049649fb6f351de156d37b9b9f3c408a8cd227
       - name: Install dependencies
         run: npm ci
       - name: Run tests
